@@ -1,0 +1,82 @@
+<style>
+    body {
+        background-color: #f0f4f8;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+    }
+
+    h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    /* Контейнер для карточек — используем flex, чтобы они стояли в ряд */
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;          /* если экран маленький — карточки спустятся вниз */
+        gap: 25px;                /* расстояние между карточками */
+        justify-content: center;  /* центрируем */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Сама карточка */
+    .card {
+        background-color: white;
+        width: 320px;             /* фиксированная ширина — удобно для начала */
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+        overflow: hidden;         /* чтобы углы картинки/контента не вылезали */
+        transition: all 0.3s ease; /* плавный переход для hover */
+    }
+
+    /* Эффект при наведении */
+    .card:hover {
+        transform: translateY(-8px); /* чуть поднимается */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+        background-color: #3498db;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-body p {
+        margin: 10px 0;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    .card-footer {
+        padding: 10px;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+
+    .btn {
+        background-color: #e74c3c;
+        color: white;
+        padding: 10px 24px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn:hover {
+        background-color: #c0392b;
+    }
+    </style>
