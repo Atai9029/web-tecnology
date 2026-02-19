@@ -1,82 +1,167 @@
-<style>
-    body {
-        background-color: #f0f4f8;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 20px;
-        min-height: 100vh;
-    }
+  :root {
+    --bg-start: #e0e7ff;
+    --bg-end:   #c3dafe;
+    --card-bg:  #ffffff;
+    --text:     #1e293b;
+    --text-sec: #64748b;
+    --accent:   #f97316;
+    --red:      #ef4444;
+    --green:    #22c55e;
+    --blue:     #3b82f6;
+    --shadow:   0 10px 30px -8px rgba(0,0,0,0.12);
+  }
 
-    h1 {
-        color: #2c3e50;
-        text-align: center;
-        margin-bottom: 40px;
-    }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* Контейнер для карточек — используем flex, чтобы они стояли в ряд */
-    .cards-container {
-        display: flex;
-        flex-wrap: wrap;          /* если экран маленький — карточки спустятся вниз */
-        gap: 25px;                /* расстояние между карточками */
-        justify-content: center;  /* центрируем */
-        max-width: 1200px;
-        margin: 0 auto;
-    }
+  body {
+    min-height: 100dvh;
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    padding: 24px 16px;
+    display: grid;
+    place-items: center;
+  }
 
-    /* Сама карточка */
-    .card {
-        background-color: white;
-        width: 320px;             /* фиксированная ширина — удобно для начала */
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* лёгкая тень */
-        overflow: hidden;         /* чтобы углы картинки/контента не вылезали */
-        transition: all 0.3s ease; /* плавный переход для hover */
-    }
+  .container {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
-    /* Эффект при наведении */
-    .card:hover {
-        transform: translateY(-8px); /* чуть поднимается */
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    }
+  .card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.4);
+  }
 
-    .card-header {
-        background-color: #3498db;
-        color: white;
-        padding: 15px;
-        text-align: center;
-        font-size: 1.3em;
-        font-weight: bold;
-    }
+  .card-title {
+    font-size: 1.38rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
 
-    .card-body {
-        padding: 20px;
-    }
+  .card-text {
+    font-size: 0.97rem;
+    line-height: 1.45;
+    color: var(--text-sec);
+    margin-bottom: 20px;
+  }
 
-    .card-body p {
-        margin: 10px 0;
-        color: #555;
-        line-height: 1.5;
-    }
+  .actions {
+    display: flex;
+    gap: 20px;
+    font-size: 0.94rem;
+    margin-top: 8px;
+  }
 
-    .card-footer {
-        padding: 10px;
-        text-align: center;
-        border-top: 1px solid #eee;
-    }
+  .action-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
 
-    .btn {
-        background-color: #e74c3c;
-        color: white;
-        padding: 10px 24px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: bold;
-        text-decoration: none;
-        display: inline-block;
-    }
+  .action-link:hover {
+    text-decoration: underline;
+  }
 
-    .btn:hover {
-        background-color: #c0392b;
-    }
-    </style>
+  /* Вторая карточка — список заданий */
+  .subjects {
+    margin: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .subject-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .subject-item::before {
+    content: "";
+    width: 4px;
+    height: 20px;
+    border-radius: 2px;
+  }
+
+  .math    { --color: var(--red);    }
+  .history  { --color: var(--green);  }
+  .physics  { --color: var(--blue);   }
+
+  .subject-item::before {
+    background: var(--color);
+  }
+
+  .subject-name {
+    color: var(--text);
+    flex: 1;
+  }
+
+  .subject-count {
+    color: var(--text-sec);
+    font-weight: 400;
+  }
+
+  .btn-detail {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-detail:hover {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* нижняя панель вкладок */
+  .tabs {
+    display: flex;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: var(--shadow);
+    margin-top: 8px;
+  }
+
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-sec);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.18s;
+  }
+
+  .tab.active {
+    background: white;
+    color: var(--text);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .tab:hover:not(.active) {
+    color: var(--text);
+  }
