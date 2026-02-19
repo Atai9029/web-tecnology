@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-  <meta name="author" content="Махмутов Атай"
-    <meta charset="UTF-8">
-    <title>Закладки</title>
 
-<link rel="stylesheet" href="style.css"/>
+  <meta name="author" content="Махмутов Атай">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Домашние задания — современный стиль</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
-
 <body>
 
-    <h1>Закладки</h1>
+<div class="container">
 
-    <div class="cards-container">
-
-        <div class="card">
-            <div class="card-header">Домашка — Важное</div>
-            <div class="card-body">
-                <p>Алгебра</p>
-                <p>Английский язык</p>
-                <p>Введение в web<p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn">Добавить</a>
-                <a href="#" class="btn">Удалить</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">Мои работы  — Интересное</div>
-            <div class="card-body">
-                <p>Тут пока пусто</p>
-                <p>Если хочешь то можешь добавить</p>
-                <p>Шууучуу конечно</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn">Добавить</a>
-                <a href="#" class="btn">Удалить</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">Пользователи - Нужное</div>
-            <div class="card-body">
-                <p>Приглашай других пользователей</p>
-                <p>Любых без разницы</p>
-                <p>что то там</p>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn">Добавить</a>
-                <a href="#" class="btn">Удалить</a>
-            </div>
-        </div>
+  <!-- Карточка 1 -->
+  <div class="card">
+    <div class="card-title">Домашние задания</div>
+    <div class="card-text">
+      Пусто. . . . . . . .<br>
+      Добавь домашнее задание сюда
     </div>
-  <!-- СРАЗУ СКАЖУ ЧТО ТУТ НЕ ВСЕ СОБЛЮДЕНО ТАК КАК МОЗГИ У МЕНЯ НА БИКРИНЕ Я МОЗГ СЕБЕ ЧУЧУТЬ ПОЛОМАЛ ЕСЛИ БЫ НЕ ТУТОРЫ GROK
-  Я БЫ КУКУХОЙ ПОЕХАЛ ХОРОШО ЧТО Я ХОТЬ ЧТО ТО ИЗУЧИЛ А ТО БЫЛО БЫ ТУТ ТАКАЯ КАША НО Я СТАРАЛСЯ спасибо -->
+    <div class="actions">
+      <a href="#" class="action-link">Добавить своё</a>
+      <a href="#" class="action-link">Поддержка</a>
+    </div>
+  </div>
+
+  <!-- Карточка 2 -->
+  <div class="card">
+    <div class="card-title">Мои задания</div>
+
+    <div class="subjects">
+      <div class="subject-item math">
+        <span class="subject-name">ООП</span>
+        <span class="subject-count">9</span>
+      </div>
+      <div class="subject-item history">
+        <span class="subject-name">Web tecnology</span>
+        <span class="subject-count">10</span>
+      </div>
+      <div class="subject-item physics">
+        <span class="subject-name">English</span>
+        <span class="subject-count">2</span>
+      </div>
+    </div>
+
+    <a href="#" class="btn-detail">Подробнее</a>
+  </div>
+
+  <!-- Нижняя панель вкладок -->
+  <div class="tabs">
+    <div class="tab active">Последние</div>
+    <div class="tab">Решённые</div>
+    <div class="tab">На проверке</div>
+    <div class="tab">С оценкой</div>
+  </div>
+
+</div>
+
 </body>
 </html>
