@@ -34,7 +34,7 @@ nav a {
 /* HERO */
 .hero {
     height: 100vh;
-    background: url('../img/hadr.jpg') center/cover no-repeat;
+    background: white  center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
