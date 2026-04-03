@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+.overlay {
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.overlay h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    margin-bottom: 20px;
+}
+
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid rgba(170, 160, 160, 0.397);
+    transition: 0.3s;
+}
+.card img {
+    width: 100%;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ABOUT */
+.about {
+    background: #111;
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* login */
+.login {
+    padding: 200px 100px;
+    text-align: center;
+}
+
+.card_log {
+    width: 300px;
+    border: 1px solid #ddd;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

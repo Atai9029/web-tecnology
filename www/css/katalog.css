@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    z-index: 1000;
+}
+
+.top {
+    display: flex;
+    flex-direction: column; /* ставит элементы друг под другом */
+    align-items: center; /* центр по горизонтали */
+    margin-bottom: 40px;
+}
+
+.top h1 {
+    font-size: 50px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Верх */
+.catalog {
+    padding: 40px;
+}
+
+
+
+
+/* Сетка */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Карточка */
+.card {
+    background: #161616;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Картинка */
+.image {
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Тег */
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* Контент */
+.content {
+    padding: 20px;
+}
+
+.content h3 {
+    margin-bottom: 10px;
+}
+
+/* Цена */
+.price {
+    color: #00ff88;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Детали */
+.details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #00ff88, #00ccff);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    .top {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .top input {
+        width: 100%;
+    }
+}
