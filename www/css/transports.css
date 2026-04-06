@@ -12,7 +12,35 @@ body {
 
 /* HEADER */
 .header {
-    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inback {
+    color: white;
+    padding: 70px 60px 0px 60px;
 }
 
 a {
@@ -25,11 +53,16 @@ a {
 .product {
     display: flex;
     gap: 80px;
-    padding: 60px 80px;
+    padding: 30px 80px;
     align-items: flex-start;
     max-width: 1400px;
     margin: 0 auto;
 }
+
+.catalog {
+    padding: 40px;
+}
+
 
 /* ЛЕВАЯ ЧАСТЬ */
 .left {
@@ -44,8 +77,8 @@ a {
     max-width: 100%;
     border-radius: 20px;
     margin-bottom: 20px;
+    object-fit: cover;
 }
-
 /* МИНИ ФОТО */
 .thumbs {
     display: flex;
