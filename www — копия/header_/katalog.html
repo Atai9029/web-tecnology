@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог — ARMED FORCES</title>
+    <link rel="stylesheet" href="../css/katalog.css">
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><a href="../index.html">ARMED FORCES</a></div>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="katalog.html">Каталог</a>
+            <a href="about.html">О нас</a>
+            <a href="kontakt.html">Контакты</a>
+        </nav>
+    </header>
+
+    <div class="cart-widget">
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+        <div class="cart-dropdown" id="cart-dropdown">
+            <h3>Корзина</h3>
+            <ul id="cart-items"></ul>
+            <div class="cart-total">Сумма: $<span id="total-price">0</span></div>
+            <button class="checkout-btn" onclick="openPaymentModal()">Перейти к оплате</button>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePaymentModal()">&times;</span>
+            <h2>Оплата картой</h2>
+            <p class="pay-amount">К оплате: <strong id="modal-total">$0</strong></p>
+            
+            <form id="payment-form" onsubmit="processOrder(event)">
+                <div class="input-group">
+                    <label>Владелец техники</label>
+                    <input type="text" placeholder="Имя Фамилия" required>
+                </div>
+                <div class="input-group">
+                    <label>Номер карты</label>
+                    <input type="text" placeholder="xxxx xxxx xxxx xxxx" maxlength="19" required>
+                </div>
+                <div class="row">
+                    <input type="text" placeholder="ММ/ГГ" maxlength="5" required>
+                    <input type="password" placeholder="CVV" maxlength="3" required>
+                </div>
+                <button type="submit" class="pay-btn" id="pay-submit-btn">Оплатить сейчас</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="catalog">
+        <div class="top">
+            <h1>Каталог транспорта</h1>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="image">
+                    <a href="../transports/Kamaz_Typhoon.html"><img src="../A_T/Kamaz_Typhoon.jpg">
+                    <span class="tag">ТОП</span>
+                </div>
+                <div class="content">
+                    <h3>Kamaz Typhoon</h3>
+                    <p class="price">$1,500,000</p>
+                    <div class="details">
+                        <span>2011</span>
+                        <span>Автомат</span>
+                        <span>Бензин</span>
+                    </div></a>
+                    <button onclick="addToCart('Kamaz Typhoon', 1500000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <a href="../transports/T-72B3.html"><img src="../A_T/Т-72В3.jpg">
+                    <span class="tag">ТОП</span>
+                </div>
+                <div class="content">
+                    <h3>T-72B3</h3>
+                    <p class="price">$2,500,000</p>
+                    <div class="details">
+                        <span>2012</span>
+                        <span>Автомат</span>
+                        <span>Механика</span>
+                    </div></a>
+                    <button onclick="addToCart('T-72B3', 2500000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <a href="../transports/F_A-18.html"><img src="../A_T/F_A-18F.webp">
+                </div>
+                <div class="content">
+                    <h3>F/A-18</h3>
+                    <p class="price">$75,000,000</p>
+                    <div class="details">
+                        <span>1995</span>
+                        <span>Реактивный</span>
+                        <span>Керосин</span>
+                    </div></a>
+                    <button onclick="addToCart('F/A-18', 75000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <a href="../transports/Lockheed_C-130_Hercules.html"><img src="../A_T/Lockheed_C-130_Hercules.jpg">
+                </div>
+                <div class="content">
+                    <h3>C-130 Hercules</h3>
+                    <p class="price">$70,000,000</p>
+                    <div class="details">
+                        <span>1999</span>
+                        <span>Турбины</span>
+                        <span>Керосин</span>
+                    </div></a>
+                    <button onclick="addToCart('C-130 Hercules', 70000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/К-52.jpg">
+                </div>
+                <div class="content">
+                    <h3>К-52</h3>
+                    <p class="price">$20,000,000</p>
+                    <div class="details">
+                        <span>1997</span>
+                        <span>Винты</span>
+                        <span>Керосин</span>
+                    </div>
+                    <button onclick="addToCart('К-52', 20000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/МИ_35-М.jpg">
+                </div>
+                <div class="content">
+                    <h3>МИ 35-М</h3>
+                    <p class="price">$30,000,000</p>
+                    <div class="details">
+                        <span>2005</span>
+                        <span>Винты</span>
+                        <span>Керосин</span>
+                    </div>
+                    <button onclick="addToCart('МИ 35-М', 30000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/T-34.jpg">
+                </div>
+                <div class="content">
+                    <h3>T-34</h3>
+                    <p class="price">$250,000</p>
+                    <div class="details">
+                        <span>1940</span>
+                        <span>Механика</span>
+                        <span>Дизель</span>
+                    </div>
+                    <button onclick="addToCart('T-34', 250000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/Т-90.jpg">
+                </div>
+                <div class="content">
+                    <h3>Т-90</h3>
+                    <p class="price">$4,500,000</p>
+                    <div class="details">
+                        <span>1992</span>
+                        <span>Механика</span>
+                        <span>Дизель</span>
+                    </div>
+                    <button onclick="addToCart('Т-90', 4500000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/MAZ-537.jpg">
+                </div>
+                <div class="content">
+                    <h3>MAZ-537</h3>
+                    <p class="price">$50,000</p>
+                    <div class="details">
+                        <span>1950</span>
+                        <span>Автомат</span>
+                        <span>Дизель</span>
+                    </div>
+                    <button onclick="addToCart('MAZ-537', 50000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/USS_Montgomery_(LCS-8).jpg">
+                </div>
+                <div class="content">
+                    <h3>USS Montgomery</h3>
+                    <p class="price">$3,800,000,000</p>
+                    <div class="details">
+                        <span>2010</span>
+                        <span>Турбины</span>
+                        <span>Дизель</span>
+                    </div>
+                    <button onclick="addToCart('USS Montgomery', 3800000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/anti-air system.webp">
+                </div>
+                <div class="content">
+                    <h3>Система ПВО</h3>
+                    <p class="price">$550,000,000</p>
+                    <div class="details">
+                        <span>1970</span>
+                        <span>Автомат</span>
+                        <span>Дизель</span>
+                    </div>
+                    <button onclick="addToCart('Система ПВО', 550000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/PC-24.jpg">
+                </div>
+                <div class="content">
+                    <h3>ЯРС</h3>
+                    <p class="price">$100,000,000</p>
+                    <div class="details">
+                        <span>2000</span>
+                        <span>Автомат</span>
+                        <span>Дизель</span>
+                    </div>
+                    <button onclick="addToCart('ЯРС', 100000000)">В корзину</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image">
+                    <img src="../A_T/KI-115.jpg">
+                </div>
+                <div class="content">
+                    <h3>Накадзима Ки-115</h3>
+                    <p class="price">$200,000</p>
+                    <div class="details">
+                        <span>1944</span>
+                        <span>Винт</span>
+                        <span>Керосин</span>
+                    </div>
+                    <button onclick="addToCart('Ки-115', 200000)">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer> 
+        <section class="about">
+            <h2>Почему выбирают нас</h2>
+            <p>Мы предлагаем проверенную военную технику, гарантируя надежность.</p>
+        </section>
+        <p>© 2026 ARMED FORCES</p>
+    </footer>
+
+    <script src="../JS/katalog.js"></script>
+</body>
+</html>
